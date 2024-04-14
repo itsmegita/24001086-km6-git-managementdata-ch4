@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Create</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- first sidebar -->
+    <section id="first-sidebar">
+      <a class="sidebar-logo" href="#"> </a>
+      <div class="first-sidebar-content">
+        <ul>
+          <li>
+            <img src="/assets/img/fi_home.svg" class="sidebar-img" />
+            <p class="sidebar-text">Dashboard</p>
+          </li>
+          <li class="active" aria-current="true">
+            <img src="/assets/img/fi_truck.svg" class="sidebar-img" />
+            <p class="sidebar-text-bold fw-bold">Cars</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- header -->
+    <section id="header">
+      <nav class="navbar navbar-expand-lg fixed-top shadow">
+        <div class="container-fluid justify-content-end">
+          <a class="navbar-brand" href="#"></a>
+          <span class="navbar-toggler-icon"></span>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarCollapse"
+          >
+            <form class="d-flex nav-search" role="search">
+              <input
+                class="navbar-form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline" type="submit">Search</button>
+            </form>
+          </div>
+
+          <div>
+            <div class="user text-end">
+              <img
+                src="/assets/img/user-img.png"
+                alt="user-img"
+                width="32"
+                height="32"
+                class="rounded-circle"
+              />
+              <span>Unis Badri</span>
+              <img src="/assets/img/fi_chevron-down.svg" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- second sidebar -->
+    <section id="right-sidebar">
+      <ul class="right-list">
+        <li class="right-box-text right-list-info fw-bold">CARS</li>
+        <li class="right-box right-box-text right-list-text fw-bold">
+          <a href="/">List Car</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- main -->
+    <section id="main">
+      <div class="row main-content">
+        <div class="cars-container">
+          <h3 class="text-content fw-bold">Cars</h3>
+          <div class="separator">
+            <img src="/assets/img/chevron-right.svg" style="width: 12px" />
+          </div>
+
+          <div class="separator">
+            <h3 class="text-content fw-bold">List Car</h3>
+          </div>
+
+          <div class="separator">
+            <img src="/assets/img/chevron-right.svg" style="width: 12px" />
+          </div>
+
+          <div class="separator">
+            <h3 class="text-content">Add New Car</h3>
+          </div>
+        </div>
+
+        <div class="main-info">
+          <h2 class="fw-bold h2-info">Add New Car</h2>
+        </div>
+
+        <div class="container-fluid container-form">
+          <form
+            action="/cars/create"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="container-form-info">
+              <div class="row row-form">
+                <div class="col-lg-2 my-auto">
+                  <label for="name"
+                    >Nama <span class="text-danger">*</span></label
+                  >
+                </div>
+                <div class="col-lg-4">
+                  <input
+                    class="form-control form-custom"
+                    type="text"
+                    name="name"
+                    placeholder="Avanza"
+                    id="name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-lg-2 my-auto">
+                  <label for="rentPerDay"
+                    >Sewa Per Hari <span class="text-danger">*</span></label
+                  >
+                </div>
+                <div class="form-input-custom col-lg-4">
+                  <input
+                    class="form-control form-custom"
+                    type="number"
+                    name="rentPerDay"
+                    placeholder="Rp 0,-"
+                    id="rentPerDay"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-lg-2 my-auto">
+                  <label for="name">Ukuran <span>*</span></label>
+                </div>
+                <div class="form-input-custom col-lg-4">
+                  <select
+                    name="size"
+                    class="form-select form-custom"
+                    aria-label="Default select example"
+                  >
+                    <option value="small" selected>Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-lg-2 my-auto">
+                  <label for="photo"
+                    >Foto <span class="text-danger">*</span></label
+                  >
+                </div>
+                <div class="form-input-custom col-lg-4">
+                  <input
+                    name="photo"
+                    class="form-control form-file form-custom"
+                    type="file"
+                    id="formFile"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row button-group">
+                <a href="/cars" class="btn btn-outline-custom btn-cancel w-auto"
+                  >Cancel</a
+                >
+                <button class="btn btn-custom-primary w-auto">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
