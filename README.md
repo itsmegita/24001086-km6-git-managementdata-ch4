@@ -6,4 +6,4 @@
 
 berikut adalah data model yang digunakan dalam challenge ini
 
-![screenshot](.\public\assets\img\car-dbdiagram.png)
+![screenshot](https://github.com/itsmegita/24001086-km6-git-managementdata-ch4/blob/main/public/assets/img/car-dbdiagram.png)
