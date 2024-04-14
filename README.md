@@ -6,4 +6,4 @@
 
 berikut adalah data model yang digunakan dalam challenge ini
 
-![screenshot](\public\assets\img\car-dbdiagram.png)
+![screenshot](.\public\assets\img\car-dbdiagram.png)
